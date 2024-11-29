@@ -20,8 +20,8 @@ public class AlmacenController {
         return productos;
     }
 
-    @PostMapping("/{id}")
-    public String addProductoToAlmacen(@PathVariable("id") Long id, @RequestBody ProductoEntityImpl producto, Integer cantidad) {
+    @PostMapping("/{id}/{cantidad}")
+    public String addProductoToAlmacen(@PathVariable("id") Long id, @RequestBody ProductoEntityImpl producto, @PathVariable("cantidad") Integer cantidad) {
         String response  = almacenService.addProductoToAlmacen(id, producto, cantidad);
         return response;
     }
