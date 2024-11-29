@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/almacen")
+@CrossOrigin("http://localhost:3000")
 public class AlmacenController {
     @Autowired
     private AlmacenService almacenService;
