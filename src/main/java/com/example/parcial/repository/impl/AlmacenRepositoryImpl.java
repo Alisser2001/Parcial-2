@@ -42,14 +42,17 @@ public class AlmacenRepositoryImpl implements IAlmacenRepository {
     @Override
     public String addProductoToAlmacen(Long id, ProductoEntityImpl producto, Integer cantidad) {
         try {
-            int idProducto = entityManager.createNativeQuery(
+            System.out.println(producto);
+
+            // Cambia el tipo de la variable a Long, ya que la consulta devolverá un Long, no un BigInteger.
+            Long idProducto = (Long) entityManager.createNativeQuery(
                             "INSERT INTO productos (nombre, descripcion, precio, id_categoria) " +
                                     "VALUES (?, ?, ?, ?) RETURNING id")
                     .setParameter(1, producto.getNombre())
                     .setParameter(2, producto.getDescripcion())
                     .setParameter(3, producto.getPrecio())
                     .setParameter(4, producto.getIdCategoria())
-                    .executeUpdate();
+                    .getSingleResult();
 
             entityManager.createNativeQuery(
                             "INSERT INTO productos_almacen (id_almacen, id_producto, cantidad) " +

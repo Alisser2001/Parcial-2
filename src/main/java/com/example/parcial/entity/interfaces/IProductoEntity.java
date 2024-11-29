@@ -13,8 +13,6 @@ public interface IProductoEntity {
     Double getPrecio();
     BigInteger getIdCategoria();
     CategoriaEntityImpl getCategoria();
-    Date getFechaCreacion();
-    Date getFechaActualizacion();
 
     // Setters
     void setId(BigInteger id);
@@ -23,6 +21,4 @@ public interface IProductoEntity {
     void setPrecio(Double precio);
     void setIdCategoria(BigInteger idCategoria);
     void setCategoria(CategoriaEntityImpl categoria);
-    void setFechaCreacion(Date fechaCreacion);
-    void setFechaActualizacion(Date fechaActualizacion);
 }

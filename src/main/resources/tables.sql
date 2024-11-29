@@ -3,9 +3,7 @@ CREATE TABLE "productos"(
                             "nombre" VARCHAR(255) NOT NULL,
                             "descripcion" VARCHAR(255) NOT NULL,
                             "precio" FLOAT(53) NOT NULL,
-                            "id_categoria" BIGINT NOT NULL,
-                            "fecha_creacion" DATE NOT NULL,
-                            "fecha_actualizacion" DATE NOT NULL
+                            "id_categoria" BIGINT NOT NULL
 );
 ALTER TABLE
     "productos" ADD PRIMARY KEY("id");
@@ -59,13 +57,13 @@ VALUES
     ('Almacén Sur', 'Calle Real 789, Ciudad LMN', '555-666-7777', CURRENT_DATE, CURRENT_DATE, 4000),
     ('Almacén Oeste', 'Calle Secundaria 101, Ciudad PQR', '111-222-3333', CURRENT_DATE, CURRENT_DATE, 3500);
 
-INSERT INTO "productos" ("nombre", "descripcion", "precio", "id_categoria", "fecha_creacion", "fecha_actualizacion")
+INSERT INTO "productos" ("nombre", "descripcion", "precio", "id_categoria")
 VALUES
-    ('Laptop', 'Laptop de 15 pulgadas con 8GB de RAM', 799.99, 1, CURRENT_DATE, CURRENT_DATE),
-    ('Camiseta', 'Camiseta de algodón para hombre', 19.99, 2, CURRENT_DATE, CURRENT_DATE),
-    ('Cereal', 'Cereal de maíz en caja', 2.99, 3, CURRENT_DATE, CURRENT_DATE),
-    ('Sillón', 'Sillón de 3 puestos de tela', 299.99, 4, CURRENT_DATE, CURRENT_DATE),
-    ('Muñeca', 'Muñeca de peluche para niñas', 12.99, 5, CURRENT_DATE, CURRENT_DATE);
+    ('Laptop', 'Laptop de 15 pulgadas con 8GB de RAM', 799.99, 1),
+    ('Camiseta', 'Camiseta de algodón para hombre', 19.99, 2),
+    ('Cereal', 'Cereal de maíz en caja', 2.99, 3),
+    ('Sillón', 'Sillón de 3 puestos de tela', 299.99, 4),
+    ('Muñeca', 'Muñeca de peluche para niñas', 12.99, 5);
 
 INSERT INTO "productos_almacen" ("id_producto", "id_almacen", "cantidad")
 VALUES

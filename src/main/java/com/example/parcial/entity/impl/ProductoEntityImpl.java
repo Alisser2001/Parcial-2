@@ -33,22 +33,14 @@ public class ProductoEntityImpl implements IProductoEntity, Serializable {
     @JoinColumn(name = "id_categoria", nullable = false, insertable = false, updatable = false)
     private CategoriaEntityImpl categoria;
 
-    @Column(name = "fecha_creacion", nullable = false)
-    private Date fechaCreacion;
-
-    @Column(name = "fecha_actualizacion", nullable = false)
-    private Date fechaActualizacion;
-
     public ProductoEntityImpl() {
     }
 
-    public ProductoEntityImpl(String nombre, String descripcion, Double precio, BigInteger idCategoria, Date fechaCreacion, Date fechaActualizacion) {
+    public ProductoEntityImpl(String nombre, String descripcion, Double precio, BigInteger idCategoria) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.idCategoria = idCategoria;
-        this.fechaCreacion = fechaCreacion;
-        this.fechaActualizacion = fechaActualizacion;
     }
 
     @Override
@@ -112,26 +104,6 @@ public class ProductoEntityImpl implements IProductoEntity, Serializable {
     }
 
     @Override
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    @Override
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    @Override
-    public Date getFechaActualizacion() {
-        return fechaActualizacion;
-    }
-
-    @Override
-    public void setFechaActualizacion(Date fechaActualizacion) {
-        this.fechaActualizacion = fechaActualizacion;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -152,8 +124,6 @@ public class ProductoEntityImpl implements IProductoEntity, Serializable {
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
                 ", idCategoria=" + idCategoria +
-                ", fechaCreacion=" + fechaCreacion +
-                ", fechaActualizacion=" + fechaActualizacion +
                 '}';
     }
 }
