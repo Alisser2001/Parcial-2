@@ -12,7 +12,6 @@ public interface IProductoEntity {
     String getDescripcion();
     Double getPrecio();
     BigInteger getIdCategoria();
-    CategoriaEntityImpl getCategoria();
 
     // Setters
     void setId(BigInteger id);
@@ -20,5 +19,4 @@ public interface IProductoEntity {
     void setDescripcion(String descripcion);
     void setPrecio(Double precio);
     void setIdCategoria(BigInteger idCategoria);
-    void setCategoria(CategoriaEntityImpl categoria);
 }

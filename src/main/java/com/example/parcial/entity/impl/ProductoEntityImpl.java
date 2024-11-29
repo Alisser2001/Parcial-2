@@ -29,10 +29,6 @@ public class ProductoEntityImpl implements IProductoEntity, Serializable {
     @Column(name = "id_categoria", nullable = false)
     private BigInteger idCategoria;
 
-    @ManyToOne
-    @JoinColumn(name = "id_categoria", nullable = false, insertable = false, updatable = false)
-    private CategoriaEntityImpl categoria;
-
     public ProductoEntityImpl() {
     }
 
@@ -91,16 +87,6 @@ public class ProductoEntityImpl implements IProductoEntity, Serializable {
     @Override
     public void setIdCategoria(BigInteger idCategoria) {
         this.idCategoria = idCategoria;
-    }
-
-    @Override
-    public CategoriaEntityImpl getCategoria() {
-        return categoria;
-    }
-
-    @Override
-    public void setCategoria(CategoriaEntityImpl categoria) {
-        this.categoria = categoria;
     }
 
     @Override
